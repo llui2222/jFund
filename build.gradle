@@ -1,0 +1,137 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.github.jengelman.gradle.plugins:shadow:2.0.4'
+    }
+}
+
+plugins {
+    id "org.sonarqube" version "2.5"
+}
+
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'com.github.johnrengelman.shadow'
+
+group = 'com.xm'
+
+def buildNumber = System.getenv("BUILD_NUMBER") as Integer ?: 0
+
+version = '2.0.0' + '+' + buildNumber
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+configurations.all {
+    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+    resolutionStrategy.cacheDynamicVersionsFor 0, 'seconds'
+}
+
+configurations {
+    distributionZipService
+    distributionZipDLL
+    distributionZipJAR
+}
+
+shadowJar {
+    mergeServiceFiles()
+    manifest {
+        attributes 'Implementation-Version': version,
+                'Main-Class': 'com.xm.jfund.application.JFund'
+    }
+}
+
+task createDistributionZip(type: Zip) {
+
+    dependsOn shadowJar
+
+    into('lib') {
+        from configurations.distributionZipDLL {
+            rename '-[\\w\\-\\d\\.\\+]*(?=\\.jar|\\.dll)', ''
+        }
+    }
+
+    into('conf') {
+        from('conf')
+    }
+
+    /* add the jar and remove version info from the filename */
+    from(shadowJar.archivePath) {
+        rename '-[\\d\\.\\+]*-all(?=\\.jar)', ''
+    }
+}
+
+/* remove the default jar from the default artifacts and add only the distribution zip*/
+project.configurations.archives.artifacts.clear()
+artifacts {
+    archives createDistributionZip
+}
+
+test {
+    testLogging {
+        events "PASSED", "FAILED", "SKIPPED"
+
+    }
+    reports {
+        junitXml.enabled = false
+        html.enabled = true
+    }
+}
+repositories {
+    maven {
+        url "https://nexus.xm.com/content/groups/public/"
+        credentials {
+            username = 'gradleBuildUser'
+            password = 'J9HF71ko1f'
+        }
+    }
+}
+
+dependencies {
+
+    implementation group: 'com.xm', name: 'jxmUtils', version: '1+'
+    implementation group: 'com.xm', name: 'mt4j', version: '1+'
+    implementation group: 'com.xm', name: 'mt4jUtils', version: '1+'
+    implementation group: 'com.xm', name: 'jAnalystUtils', version: '1+'
+
+    implementation group: 'com.xm', name: 'jTradingPlatform', version: '1+'
+    implementation group: 'com.xm', name: 'mt5j', version: '1+'
+    implementation group: 'com.xm', name: 'mt5jUtils', version: '1+'
+    implementation group: 'com.xm', name: 'jManagerUtils', version: '1+'
+
+    implementation group: 'com.rabbitmq', name: 'amqp-client', version: '3.5.3'
+    implementation group: 'it.sauronsoftware.cron4j', name: 'cron4j', version: '2.2.5'
+    implementation group: 'com.google.code.gson', name: 'gson', version: '2.3.1'
+    implementation group: 'org.jboss.resteasy', name: 'resteasy-client', version: '3.0.11.Final'
+    implementation group: 'org.jboss.resteasy', name: 'resteasy-jackson-provider', version: '3.0.11.Final'
+    implementation group: 'org.apache.httpcomponents', name: 'fluent-hc', version: '4.4.1'
+    implementation group: 'io.github.hengyunabc', name: 'zabbix-sender', version: '0.0.4'
+    implementation group: 'mysql', name: 'mysql-connector-java', version: '5.1.35'
+    implementation group: 'org.postgresql', name: 'postgresql', version: '42.2.1.jre7'
+    implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
+    implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
+    implementation group: 'org.slf4j', name: 'slf4j-jdk14', version: '1.7.25'
+    implementation group: 'com.xm.jfund', name: 'trade-service-client', version: '1+'
+
+    runtime group: 'com.oracle.jdbc', name: 'ojdbc8', version: '12.2.0.1'
+
+    testImplementation group: 'junit', name: 'junit', version: '4.12'
+    testImplementation group: 'org.mockito', name: 'mockito-core', version: '2.13.0'
+    testImplementation group: 'org.assertj', name: 'assertj-core', version: '3.9.1'
+
+    distributionZipDLL group: 'com.xm', name: 'mt4jc', version: '1+', classifier: 'x64Release', ext: 'dll'
+    distributionZipDLL group: 'com.xm', name: 'mt4jc', version: '1+', classifier: 'x64Release', ext: 'pdb'
+    distributionZipDLL group: 'mt.mt4', name: 'mtmanapi64', version: '1090', classifier: 'x64', ext: 'dll'
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: "https://nexus.xm.com/content/repositories/releases") {
+                authentication(userName: "artifactDeployerUser", password: "Rrlffkk0I1")
+            }
+        }
+    }
+}

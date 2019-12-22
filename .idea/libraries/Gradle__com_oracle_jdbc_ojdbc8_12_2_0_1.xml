@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: com.oracle.jdbc:ojdbc8:12.2.0.1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.oracle.jdbc/ojdbc8/12.2.0.1/60f439fd01536508df32658d0a416c49ac6f07fb/ojdbc8-12.2.0.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

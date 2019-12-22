@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>logs/jfund.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>logs/archived/jfund.%d{yyyy-MM-dd}.%i.log.zip</fileNamePattern>
+            <maxFileSize>100MB</maxFileSize>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="THRESHOLDS_TYPES_LOG" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <discriminator>
+            <key>sCurrentActiveSymbolThresholdParameter</key>
+            <defaultValue>unknown</defaultValue>
+        </discriminator>
+        <file>logs/current_active_symbol_thresholds.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>logs/archived/current_active_symbol_thresholds.%d{yyyy-MM-dd}.%i.log.zip</fileNamePattern>
+            <maxFileSize>100MB</maxFileSize>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS}, %msg%n</pattern>
+        </encoder>
+    </appender>
+    <logger name="sCurrentActiveSymbolThresholdLogger" additivity="false">
+        <appender-ref ref="THRESHOLDS_TYPES_LOG"/>
+    </logger>
+    <appender name="CSV_FILE" class="ch.qos.logback.classic.sift.SiftingAppender">
+        <discriminator>
+            <key>logFile</key>
+            <defaultValue>unknown</defaultValue>
+        </discriminator>
+        <sift>
+            <appender name="CSV" class="ch.qos.logback.core.rolling.RollingFileAppender">
+                <file>logs/${logFile}.csv</file>
+                <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+                    <fileNamePattern>logs/archived/${logFile}.%d{yyyy-MM-dd}.%i.csv.zip</fileNamePattern>
+                    <maxFileSize>100MB</maxFileSize>
+                </rollingPolicy>
+                <encoder>
+                    <pattern>%date{dd MMM yyyy;HH:mm:ss.SSS},%msg%n</pattern>
+                </encoder>
+            </appender>
+        </sift>
+    </appender>
+    <logger name="csvLogger" additivity="false">
+        <appender-ref ref="CSV_FILE"/>
+    </logger>
+    <logger name="sCurrentActiveSymbolThresholdLogger" additivity="false">
+        <appender-ref ref="THRESHOLDS_TYPES_LOG"/>
+    </logger>
+    <root level="debug">
+        <appender-ref ref="FILE"/>
+        <appender-ref ref="STDOUT"/>
+    </root>
+</configuration>

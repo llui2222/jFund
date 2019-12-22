@@ -1,0 +1,89 @@
+2018-10-17 09:54:38.703 [main] INFO  c.x.j.s.t.TradeServiceApplication - Starting TradeServiceApplication on LIM-FMG-WS06-AM with PID 11108 (C:\XMProjects\trade-service\out\production\classes started by astaroverov in C:\XMProjects\jFund)
+2018-10-17 09:54:38.706 [main] DEBUG c.x.j.s.t.TradeServiceApplication - Running with Spring Boot v2.0.1.RELEASE, Spring v5.0.5.RELEASE
+2018-10-17 09:54:38.708 [main] INFO  c.x.j.s.t.TradeServiceApplication - No active profile set, falling back to default profiles: default
+2018-10-17 09:54:38.747 [main] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@53aad5d5: startup date [Wed Oct 17 09:54:38 EEST 2018]; root of context hierarchy
+2018-10-17 09:54:40.448 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-10-17 09:54:40.556 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration' of type [org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration$$EnhancerBySpringCGLIB$$ed31651f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-10-17 09:54:40.576 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'stringOrNumberMigrationVersionConverter' of type [org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration$StringOrNumberToMigrationVersionConverter] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-10-17 09:54:40.580 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.context.properties.ConversionServiceDeducer$Factory' of type [org.springframework.boot.context.properties.ConversionServiceDeducer$Factory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-10-17 09:54:40.736 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.hibernate.validator.internal.constraintvalidators.bv.NotBlankValidator' of type [org.hibernate.validator.internal.constraintvalidators.bv.NotBlankValidator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-10-17 09:54:40.745 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'serviceProperties' of type [com.xm.jfund.service.trade.configuration.properties.ServiceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-10-17 09:54:40.781 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'asyncConfiguration' of type [com.xm.jfund.service.trade.configuration.AsyncConfiguration$$EnhancerBySpringCGLIB$$4d4edb3a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-10-17 09:54:40.784 [main] DEBUG c.x.j.s.t.c.AsyncConfiguration - Creating Async Task Executor
+2018-10-17 09:54:40.785 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 
+2018-10-17 09:54:40.793 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService  'asyncExecutor'
+2018-10-17 09:54:40.793 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'asyncExecutor' of type [org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-10-17 09:54:40.905 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.retry.annotation.RetryConfiguration' of type [org.springframework.retry.annotation.RetryConfiguration$$EnhancerBySpringCGLIB$$b87b65da] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-10-17 09:54:40.951 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$c2b7cdb5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-10-17 09:54:41.410 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2018-10-17 09:54:41.424 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2018-10-17 09:54:41.433 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2018-10-17 09:54:41.434 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.29
+2018-10-17 09:54:41.437 [localhost-startStop-1] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_144\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\WINDOWS\system32\config\systemprofile\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\nodejs\;C:\Program Files\PuTTY\;C:\XMProjects\mt4jc\x64\Debug;C:\XMProjects\mt\mt4\lib;C:\XMProjects\jxmTools;c:\Python34\;C:\Program Files\TortoiseGit\bin;C:\XMProjects\mt5jc\x64\Debug;C:\XMProjects\mt\mt5\lib;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Users\astaroverov\AppData\Local\Microsoft\WindowsApps;;.]
+2018-10-17 09:54:41.594 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2018-10-17 09:54:41.594 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2847 ms
+2018-10-17 09:54:42.199 [localhost-startStop-1] INFO  o.f.c.internal.util.VersionPrinter - Flyway Community Edition 5.0.7 by Boxfuse
+2018-10-17 09:54:42.201 [localhost-startStop-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2018-10-17 09:54:42.284 [localhost-startStop-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2018-10-17 09:54:42.296 [localhost-startStop-1] INFO  o.f.c.i.database.DatabaseFactory - Database: jdbc:mysql://localhost:3306/trade (MySQL 10.0)
+2018-10-17 09:54:42.351 [localhost-startStop-1] INFO  o.f.core.internal.command.DbValidate - Successfully validated 3 migrations (execution time 00:00.025s)
+2018-10-17 09:54:42.363 [localhost-startStop-1] INFO  o.f.core.internal.command.DbMigrate - Current version of schema `trade`: 4
+2018-10-17 09:54:42.364 [localhost-startStop-1] INFO  o.f.core.internal.command.DbMigrate - Schema `trade` is up to date. No migration necessary.
+2018-10-17 09:54:42.504 [localhost-startStop-1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-10-17 09:54:42.518 [localhost-startStop-1] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-10-17 09:54:42.597 [localhost-startStop-1] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.2.16.Final}
+2018-10-17 09:54:42.599 [localhost-startStop-1] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2018-10-17 09:54:42.646 [localhost-startStop-1] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-10-17 09:54:42.851 [localhost-startStop-1] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2018-10-17 09:54:43.427 [localhost-startStop-1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-10-17 09:54:44.027 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-10-17 09:54:44.027 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'sessionRepositoryFilter' to: [/*]
+2018-10-17 09:54:44.027 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-10-17 09:54:44.027 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-10-17 09:54:44.027 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2018-10-17 09:54:44.027 [localhost-startStop-1] INFO  o.s.b.w.s.DelegatingFilterProxyRegistrationBean - Mapping filter: 'springSecurityFilterChain' to: [/*]
+2018-10-17 09:54:44.027 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpTraceFilter' to: [/*]
+2018-10-17 09:54:44.027 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'webMvcMetricsFilter' to: [/*]
+2018-10-17 09:54:44.027 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+2018-10-17 09:54:44.149 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'fixSchedulingConfiguration' defined in file [C:\XMProjects\trade-service\out\production\classes\com\xm\jfund\service\trade\client\bridge\configuration\FixSchedulingConfiguration.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.boot.context.properties.ConfigurationPropertiesBindException: Error creating bean with name 'fix-com.xm.jfund.service.trade.client.bridge.configuration.properties.FixProperties': Could not bind properties to 'FixProperties' : prefix=fix, ignoreInvalidFields=false, ignoreUnknownFields=true; nested exception is org.springframework.boot.context.properties.bind.BindException: Failed to bind properties under 'fix' to com.xm.jfund.service.trade.client.bridge.configuration.properties.FixProperties
+2018-10-17 09:54:44.150 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-10-17 09:54:44.150 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2018-10-17 09:54:44.156 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2018-10-17 09:54:44.156 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'asyncExecutor'
+2018-10-17 09:54:44.158 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2018-10-17 09:54:44.162 [localhost-startStop-1] WARN  o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [Thread-11] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+ java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+ org.LatencyUtils.PauseDetector$PauseDetectorThread.run(PauseDetector.java:85)
+2018-10-17 09:54:44.162 [localhost-startStop-1] WARN  o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [SimplePauseDetectorThread_0] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Thread.sleep(Native Method)
+ java.lang.Thread.sleep(Thread.java:340)
+ java.util.concurrent.TimeUnit.sleep(TimeUnit.java:386)
+ org.LatencyUtils.TimeServices.sleepNanos(TimeServices.java:62)
+ org.LatencyUtils.SimplePauseDetector$SimplePauseDetectorThread.run(SimplePauseDetector.java:116)
+2018-10-17 09:54:44.169 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2018-10-17 09:54:44.169 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Binding to target org.springframework.boot.context.properties.bind.BindException: Failed to bind properties under 'fix' to com.xm.jfund.service.trade.client.bridge.configuration.properties.FixProperties failed:
+
+    Property: fix.session
+    Value: {}
+    Reason: must not be empty
+
+
+Action:
+
+Update your application's configuration
+

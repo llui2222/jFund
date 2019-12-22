@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/jFund.iml" filepath="$PROJECT_DIR$/jFund.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/jFundStrategyLoader_main.iml" filepath="$PROJECT_DIR$/.idea/modules/jFundStrategyLoader_main.iml" group="jFundStrategyLoader" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/jFundStrategyLoader_test.iml" filepath="$PROJECT_DIR$/.idea/modules/jFundStrategyLoader_test.iml" group="jFundStrategyLoader" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/jFund_main.iml" filepath="$PROJECT_DIR$/.idea/modules/jFund_main.iml" group="jFund" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/jFund_test.iml" filepath="$PROJECT_DIR$/.idea/modules/jFund_test.iml" group="jFund" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/trade-service_main.iml" filepath="$PROJECT_DIR$/.idea/modules/trade-service_main.iml" group="trade-service" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/trade-service_test.iml" filepath="$PROJECT_DIR$/.idea/modules/trade-service_test.iml" group="trade-service" />
+    </modules>
+  </component>
+</project>

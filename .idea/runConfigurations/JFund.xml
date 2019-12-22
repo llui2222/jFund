@@ -1,0 +1,19 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="JFund" type="Application" factoryName="Application" nameIsGenerated="true">
+    <envs>
+      <env name="JFUND_ACTIVE_PROFILE" value="aleksei" />
+    </envs>
+    <option name="MAIN_CLASS_NAME" value="com.xm.jfund.application.JFund" />
+    <module name="jFund_main" />
+    <option name="VM_PARAMETERS" value="-Djava.library.path=C:\XMProjects\mt4jc\x64\Debug" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="com.xm.jfund.application.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
